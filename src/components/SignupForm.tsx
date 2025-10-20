@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Flex, TextField, Button } from "@radix-ui/themes";
-import { EnvelopeClosedIcon, LockClosedIcon } from "@radix-ui/react-icons";
+import { EnvelopeClosedIcon, LockClosedIcon ,PersonIcon } from "@radix-ui/react-icons";
 
 function SignupForm() {
   return (
@@ -10,7 +10,7 @@ function SignupForm() {
       <label htmlFor="name">Name:</label>
       <TextField.Root placeholder="John Doe" autoFocus>
         <TextField.Slot>
-          <EnvelopeClosedIcon height="16" width="16" />
+          <PersonIcon height="16" width="16" />
         </TextField.Slot>
       </TextField.Root>
 
