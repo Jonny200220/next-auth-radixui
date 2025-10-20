@@ -1,16 +1,29 @@
 import React from "react";
-import { Button } from "@radix-ui/themes";
-import { BookmarkIcon } from "@radix-ui/react-icons";
+import { Text, Container, Heading, Card, Flex, Link } from "@radix-ui/themes";
+import SigninForm from "@/components/SigninForm";
+import NavLink from "next/link";
 
 function LoginPage() {
   return (
-    <div>
-      <h1>LoginPage</h1>
-      <Button className="variant-sold">
-        <BookmarkIcon width={15} height={15} />
-        Login
-        </Button>
-    </div>
+    <>
+      <Container size="1" height="100%" className="p-3 md:p-0">
+        <Flex className="h-screen w-full items-center">
+          <Card className="w-full p-7!">
+            <Heading>Login</Heading>
+            <SigninForm />
+
+            <Flex justify="between" my="4">
+              <Text>Don't have an account? </Text>
+              <Link asChild>
+                <NavLink passHref href="/auth/register">
+                  Sign Up
+                </NavLink>
+              </Link>
+            </Flex>
+          </Card>
+        </Flex>
+      </Container>
+    </>
   );
 }
 
