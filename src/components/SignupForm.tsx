@@ -4,11 +4,18 @@ import React from "react";
 import { Flex, TextField, Button } from "@radix-ui/themes";
 import { EnvelopeClosedIcon, LockClosedIcon } from "@radix-ui/react-icons";
 
-function SigninForm() {
+function SignupForm() {
   return (
     <Flex direction="column" gap="2">
+      <label htmlFor="name">Name:</label>
+      <TextField.Root placeholder="John Doe" autoFocus>
+        <TextField.Slot>
+          <EnvelopeClosedIcon height="16" width="16" />
+        </TextField.Slot>
+      </TextField.Root>
+
       <label htmlFor="email">Email:</label>
-      <TextField.Root placeholder="email@example.com" autoFocus>
+      <TextField.Root placeholder="email@example.com">
         <TextField.Slot>
           <EnvelopeClosedIcon height="16" width="16" />
         </TextField.Slot>
@@ -21,9 +28,9 @@ function SigninForm() {
         </TextField.Slot>
       </TextField.Root>
 
-      <Button>Sign In</Button>
+      <Button type="submit" className="mt-4!">Sign Up</Button>
     </Flex>
   );
 }
 
-export default SigninForm;
+export default SignupForm;
