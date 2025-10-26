@@ -3,8 +3,20 @@
 import React from "react";
 import { Flex, TextField, Button } from "@radix-ui/themes";
 import { EnvelopeClosedIcon, LockClosedIcon ,PersonIcon } from "@radix-ui/react-icons";
+import { log } from "console";
+import { POST } from "@/app/api/auth/[...nextauth]/route";
 
 function SignupForm() {
+
+  const onSubmit = (data: any) => {
+    console.log(data);
+
+  //  try {
+  //   const res = await fetch('api/auth/register')
+  //  } catch (error) {
+    
+  //  }
+  }
   return (
     <Flex direction="column" gap="2">
       <label htmlFor="name">Name:</label>
