@@ -2,7 +2,7 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 generator client {
-  provider = "prisma-client"
+  provider = "prisma-client-js"
   output   = "../src/generated/prisma"
 }
 
@@ -18,11 +18,21 @@ enum TaskStatus {
   CANCELLED     // Cancelada
 }
 
+enum Role {
+  ADMIN       // Administrador del sistema
+  DESIGN      // Equipo de diseño
+  BRANDING    // Equipo de branding
+  MARKETING   // Equipo de marketing
+  SISTEMAS   // Desarrollador
+  CLIENT      // Cliente externo
+}
+
 model User {
   id               Int       @id @default(autoincrement())
   name             String?
   email            String    @unique
   password         String
+  role             Role      @default(CLIENT)
   createdAt        DateTime  @default(now())
   updatedAt        DateTime  @updatedAt
   
@@ -36,6 +46,7 @@ model User {
   comments         Comment[]
   
   @@index([email])
+  @@index([role])
 }
 
 model Task {
